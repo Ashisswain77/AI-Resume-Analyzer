@@ -4,6 +4,7 @@ import ResumeCard from "../components/ResumeCard";
 import { usePuterStore } from '~/lib/puter';
 import { useNavigate } from 'react-router';
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router';
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -47,20 +48,39 @@ export default function Home() {
       <Navbar />
 
       <section className="main-section">
-        <div className="page-heading py-16 text-center">
+        <div className="page-heading py-16">
           <h1 className="text-4xl font-bold mb-4">
             Track Your Applications and Resume Ratings
           </h1>
-          <h2 className="text-lg text-gray-600">
-            Review your Submissions and check AI-Powered feedback
-          </h2>
+          {!loadingResumes && resumes?.length === 0 ? (
+            <h2>
+              No Resumes found. Upload Your First Resume to get Feedback
+            </h2>
+          ): (
+            <h2>
+              Review your Submissions and check AI-Powered feedback
+            </h2>
+          )}
         </div>
+        {loadingResumes && (
+          <div className="flex flex-col items-center justify-center">
+            <img src="/images/resume-scan-2.gif" alt="loading" className="w-[200px]" />
+          </div>
+        )}
 
         {!loadingResumes && resumes.length > 0 && (
           <div className="resumes-section">
             {resumes.map((resume) => (
               <ResumeCard key={resume.id} resume={resume} />
             ))}
+          </div>
+        )}
+
+        {!loadingResumes && resumes?.length === 0 && (
+          <div className="flex flex-col items-center justify-center mt-10 gap-4">
+            <Link to="/upload" className="primary-button w-fit text-xl font-semibold">
+              Upload Resume
+            </Link>
           </div>
         )}
       </section>
