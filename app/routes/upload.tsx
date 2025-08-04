@@ -83,65 +83,79 @@ const Upload = () => {
       <Navbar />
 
       <section className="main-section">
-        <div className="page-heading py-16">
-          <h1 className="text-4xl font-bold mb-4 text-purple-700">
-            Smart feedback for your dream job
+        <div className="page-heading py-6">
+          <h1 className="text-gradient text-4xl font-bold mb-6 whitespace-nowrap">
+            Smart Feedback for Your Dream Job
           </h1>
 
           {isProcessing ? (
             <>
-              <h2 className="text-lg mb-4 text-gray-600">{statusText}</h2>
+              <h2 className="text-xl mb-6 text-gray-600 animate-in fade-in">{statusText}</h2>
               <img
                 src="/images/resume-scan.gif"
                 alt="Scanning..."
-                className="w-full max-w-md mx-auto"
+                className="w-full max-w-md mx-auto rounded-2xl shadow-lg animate-in fade-in"
               />
             </>
           ) : (
-            <h2 className="text-lg text-gray-600">
-              Drop your resume for an ATS Score and Improvement tips
+            <h2 className="text-xl text-dark-200 mb-8">
+              Drop your resume for an ATS Score and personalized improvement tips
             </h2>
           )}
 
           {!isProcessing && (
-            <form
-              id="upload-form"
-              onSubmit={handleSubmit}
-              className="flex flex-col gap-4 mt-8"
-            >
-              <div className="form-div">
-                <label htmlFor="company-name">Company Name</label>
-                <input
-                  type="text"
-                  name="company-name"
-                  id="company-name"
-                  placeholder="Company Name"
-                />
-              </div>
-              <div className="form-div">
-                <label htmlFor="job-title">Job Title</label>
-                <input
-                  type="text"
-                  name="job-title"
-                  id="job-title"
-                  placeholder="Job Title"
-                />
-              </div>
-              <div className="form-div">
-                <label htmlFor="job-description">Job Description</label>
-                <textarea
-                  rows={5}
-                  name="job-description"
-                  id="job-description"
-                  placeholder="Job Description"
-                />
-              </div>
-              <div className="form-div">
-                <label htmlFor="uploader">Upload Resume</label>
-                <FileUploader onFileSelect={ handleFileSelect} />
-              </div>
-              <button className="primary-button" type="submit">Analyze Resume</button>
-            </form>
+            <div className="w-full max-w-2xl mx-auto bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg p-8 animate-in fade-in">
+              <form
+                id="upload-form"
+                onSubmit={handleSubmit}
+                className="flex flex-col gap-6"
+              >
+                <div className="form-div">
+                  <label htmlFor="company-name" className="text-lg font-medium mb-1">Company Name</label>
+                  <input
+                    type="text"
+                    name="company-name"
+                    id="company-name"
+                    placeholder="Enter company name"
+                    className="transition-all hover:shadow-md focus:shadow-md"
+                    required
+                  />
+                </div>
+                <div className="form-div">
+                  <label htmlFor="job-title" className="text-lg font-medium mb-1">Job Title</label>
+                  <input
+                    type="text"
+                    name="job-title"
+                    id="job-title"
+                    placeholder="Enter job title"
+                    className="transition-all hover:shadow-md focus:shadow-md"
+                    required
+                  />
+                </div>
+                <div className="form-div">
+                  <label htmlFor="job-description" className="text-lg font-medium mb-1">Job Description</label>
+                  <textarea
+                    rows={5}
+                    name="job-description"
+                    id="job-description"
+                    placeholder="Paste job description here"
+                    className="transition-all hover:shadow-md focus:shadow-md"
+                    required
+                  />
+                </div>
+                <div className="form-div">
+                  <label htmlFor="uploader" className="text-lg font-medium mb-1">Upload Resume (PDF)</label>
+                  <FileUploader onFileSelect={handleFileSelect} />
+                </div>
+                <button 
+                  className="primary-button mt-4 py-3 text-lg font-semibold transition-all hover:primary-gradient-hover"
+                  type="submit"
+                  disabled={!file}
+                >
+                  Analyze Resume
+                </button>
+              </form>
+            </div>
           )}
         </div>
       </section>

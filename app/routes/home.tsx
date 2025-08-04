@@ -50,7 +50,7 @@ export default function Home() {
       <section className="main-section">
         <div className="page-heading py-16">
           <h1 className="text-4xl font-bold mb-4">
-            Track Your Applications and Resume Ratings
+            Track Your Applications & Resume Ratings
           </h1>
           {!loadingResumes && resumes?.length === 0 ? (
             <h2>
