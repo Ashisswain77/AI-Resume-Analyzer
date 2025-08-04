@@ -5,6 +5,30 @@ import Summary from '~/components/Summary';
 import Details from '~/components/Details';
 import ATS from '~/components/ATS';
 
+// Import Feedback interface
+interface Tip {
+  type: "good" | "improve";
+  tip: string;
+  explanation: string;
+}
+
+interface CategoryData {
+  score: number;
+  tips: Tip[];
+}
+
+interface Feedback {
+  toneAndStyle: CategoryData;
+  content: CategoryData;
+  structure: CategoryData;
+  skills: CategoryData;
+  overallScore: number;
+  ATS: {
+    score: number;
+    tips: any[];
+  };
+}
+
 export const meta = () => [
   { title: 'Resumind | Review' },
   { name: 'description', content: 'Detailed overview of your resume' },
@@ -56,16 +80,16 @@ const resume = () => {
 
     return (
         <main className="resume-nav">
-          <nav className="back-button">
+          <nav className="back-button fixed top-0 z-10">
             <Link to="/" className="back-button">
-              <img src="/icons/back.svg" alt="logo" className="w-2.5 h-2.5" />
+              <img src="/icons/back.svg" alt="logo" className="w-3 h-3" />
               <span className="text-gray-800 text-sm font-semibold">Back To HomePage</span>
             </Link>
           </nav>
-          <div className="flex flex-row w-full max-lg:flex-col-reverse">
+          <div className="flex flex-row w-full max-lg:flex-col-reverse gap-6">
             <section className="feedback-section bg-[url('/images/bg-small.svg')] bg-cover h-[100vh] sticky top-0 items-center justify-center">
               {imageUrl && resumeUrl && (
-                <div className="animate-in fade-in duration-1000 gradient-border max-sm:m-0 h-[90%] max-wxl:h-fit w-fit">
+                <div className="animate-in fade-in duration-1000 p-4 max-sm:m-0 h-[90%] max-wxl:h-fit w-fit">
                   <a href={resumeUrl} target="_blank" rel="noopener noreferrer">
                     <img src={imageUrl}
                          className="w-full h-full object-contain rounded-2xl"
