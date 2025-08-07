@@ -1,87 +1,79 @@
-# Welcome to React Router!
+# 🧠 AI Resume Analyzer
 
-A modern, production-ready template for building full-stack React applications using React Router.
+Get instant feedback on your CV!  
+**AI Resume Analyzer** is a smart, browser-based resume evaluation tool built with **React**, **React Router**, and **Puter.js** — no backend required.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/remix-run/react-router-templates/tree/main/default)
-
-## Features
-
-- 🚀 Server-side rendering
-- ⚡️ Hot Module Replacement (HMR)
-- 📦 Asset bundling and optimization
-- 🔄 Data loading and mutations
-- 🔒 TypeScript by default
-- 🎉 TailwindCSS for styling
-- 📖 [React Router docs](https://reactrouter.com/)
-
-## Getting Started
-
-### Installation
-
-Install the dependencies:
-
-```bash
-npm install
-```
-
-### Development
-
-Start the development server with HMR:
-
-```bash
-npm run dev
-```
-
-Your application will be available at `http://localhost:5173`.
-
-## Building for Production
-
-Create a production build:
-
-```bash
-npm run build
-```
-
-## Deployment
-
-### Docker Deployment
-
-To build and run using Docker:
-
-```bash
-docker build -t my-app .
-
-# Run the container
-docker run -p 3000:3000 my-app
-```
-
-The containerized application can be deployed to any platform that supports Docker, including:
-
-- AWS ECS
-- Google Cloud Run
-- Azure Container Apps
-- Digital Ocean App Platform
-- Fly.io
-- Railway
-
-### DIY Deployment
-
-If you're familiar with deploying Node applications, the built-in app server is production-ready.
-
-Make sure to deploy the output of `npm run build`
-
-```
-├── package.json
-├── package-lock.json (or pnpm-lock.yaml, or bun.lockb)
-├── build/
-│   ├── client/    # Static assets
-│   └── server/    # Server-side code
-```
-
-## Styling
-
-This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever CSS framework you prefer.
+🔗 [Live Demo](https://ai-resume-analyzer-mocha.vercel.app/)
 
 ---
 
-Built with ❤️ using React Router.
+## 🚀 Features
+
+This AI-powered tool allows you to:
+
+- 📄 Upload your resume, tailored to a specific **Company** and **Job Description**
+- 🤖 Automatically evaluate and match your resume using **GPT** and **Claude**
+- 📊 Instantly receive an **ATS score** with detailed insights and suggestions to improve your job match
+- 💻 Everything runs directly in the browser — no backend or server-side logic involved
+
+---
+
+## 🧩 Why Puter.js?
+
+[Puter.js](https://docs.puter.com/) brings cloud and AI capabilities directly to your frontend app with **just a single `<script>` tag** — no backend server or API infrastructure needed.
+
+### ✨ With Puter.js, I integrated:
+- 🔐 **Serverless Authentication** – users can sign up and log in securely without managing sessions or tokens
+- 📁 **File Storage** – resumes are uploaded and stored using Puter’s cloud storage
+- 🧠 **AI Services** – GPT & Claude APIs are accessed directly from the browser to analyze and score resumes
+- 🧮 **KV Database** – job listings and resume evaluations are stored and queried with ease
+
+And the best part?
+
+> 🧾 **Zero infrastructure costs** — users pay for their own usage, and the app can scale infinitely without costing you anything as the developer.
+
+Puter is also **privacy-focused**: it doesn’t track users, collect personal info, or monetize data.
+
+---
+
+## 💼 Use Case: Deloitte Resume Test
+
+To put the analyzer to the test, I uploaded my own resume and tailored it to a **Deloitte** job description. The AI instantly assessed the fit and provided improvement suggestions — all in the browser. Try the same with your resume!
+
+---
+
+## 🌐 Try It Out
+
+👉 [AI Resume Analyzer (Live App)](https://ai-resume-analyzer-mocha.vercel.app/)
+
+1. Create a free sample account
+2. Log in with your **Puter username**
+3. Upload your resume and job details
+4. Get your AI-powered evaluation instantly!
+
+---
+
+## 🛠 Tech Stack
+
+- React
+- React Router
+- Puter.js (Auth, KV, Storage, AI APIs)
+- GPT-4 & Claude AI
+- Vite + TailwindCSS
+
+---
+
+## 📄 License
+
+This project is open-source and available under the [MIT License](LICENSE).
+
+---
+
+## 🙌 Credits
+
+- Built using [Puter.js](https://docs.puter.com/)
+- AI APIs powered by GPT and Claude
+
+---
+
+Feel free to fork, use, and contribute to this project. Pull requests and feedback are always welcome!
